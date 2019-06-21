@@ -15,7 +15,24 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>
+	<!-- Jersey -->
+	<servlet>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-class>
+			org.glassfish.jersey.servlet.ServletContainer
+		</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>com.nixsolutions.litvinov.vitaliy.rest
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/webService/*</url-pattern>
+	</servlet-mapping>
 	<!-- Processes application requests -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
@@ -49,10 +66,10 @@
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	   <jsp-config>
-        <taglib>
-            <taglib-uri>usersTag</taglib-uri>
-            <taglib-location>/WEB-INF/users.tld</taglib-location>
-        </taglib>
-    </jsp-config>
+	<jsp-config>
+		<taglib>
+			<taglib-uri>usersTag</taglib-uri>
+			<taglib-location>/WEB-INF/users.tld</taglib-location>
+		</taglib>
+	</jsp-config>
 </web-app>

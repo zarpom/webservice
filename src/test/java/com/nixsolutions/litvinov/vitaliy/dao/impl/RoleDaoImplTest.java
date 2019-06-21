@@ -1,5 +1,7 @@
 package com.nixsolutions.litvinov.vitaliy.dao.impl;
 
+ 
+
 import static org.junit.Assert.assertEquals;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
